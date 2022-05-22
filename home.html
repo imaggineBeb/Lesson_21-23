@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+	<title>Главная</title>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<!-- <style>body{opacity: 0;}</style> -->
+	<link rel="stylesheet" href="css/style.min.css?_v=20220522201812">
+	<link rel="shortcut icon" href="favicon.ico">
+	<!-- <meta name="robots" content="noindex, nofollow"> -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="wrapper">
+		<header class="header">
+		</header>
+		<main class="page">
+
+			<div class="poligon">
+				<div class="poligon__container">
+					<div class="poligon__title">ПОЛИГОН</div>
+					<div class="poligon__body">
+						<div class="poligon__show-more">
+							<div class="poligon__text">Программа "показать еще".</div>
+							<ul class="poligon__list">
+								<li class="poligon__item">
+									<a href="" class="poligon__link">item-1</a>
+								</li>
+								<li class="poligon__item">
+									<a href="" class="poligon__link">item-2</a>
+								</li>
+								<li class="poligon__item">
+									<a href="" class="poligon__link">item-3</a>
+								</li>
+								<li class="poligon__item">
+									<a href="" class="poligon__link">item-4</a>
+								</li>
+								<li class="poligon__item">
+									<a href="" class="poligon__link">item-5</a>
+								</li>
+							</ul>
+							<button class="poligon__button">Показать еще</button>
+						</div>
+						<div class="poligon__calculate">
+							<div class="poligon__text">Калькулятор</div>
+							<input id="inputOne" class="poligon__input">
+
+							<div class="poligon__buttons">
+								<button id="plus" class="poligon__btn" onclick="math='+'">+</button>
+								<button id="minus" class="poligon__btn" onclick="math='-'">-</button>
+								<button id="multiplication" class="poligon__btn" onclick="math='*'">x</button>
+								<button id="division" class="poligon__btn" onclick="math='/'">%</button>
+							</div>
+
+							<input id="inputTwo" class="poligon__input">
+
+							<button onclick="bebbeb()" id="calculations" class="poligon__button">Посчитать</button>
+							<div id="result" class="poligon__res"></div>
+						</div>
+						<div class="poligon__reverse">
+							<div class="poligon__text">Переворачивает текст задом наперед</div>
+							<textarea placeholder="Введите свой текст" class="poligon__textarea" autocomplete="off" name="" id=""></textarea>
+							<button id="btnReverse" class="poligon__button">Перевернуть</button>
+							<div class="poligon__text-verse"></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</main>
+		<script>
+			// Калькулятор
+			// переменная, в которой хранится выбранное математическое действие
+			let math;
+
+			// функция расчёта
+			function bebbeb() {
+				// переменная для результата
+				let result;
+				// получаем первое и второе число
+				let num1 = Number(document.getElementById("inputOne").value);
+				let num2 = Number(document.getElementById("inputTwo").value);
+				// смотрим, что было в переменной с действием, и действуем исходя из этого
+				switch (math) {
+					case '+':
+						result = num1 + num2;
+						break;
+					case '-':
+						result = num1 - num2;
+						break;
+					case '*':
+						result = num1 * num2;
+						break;
+					case '/':
+						result = num1 / num2;
+						break;
+				}
+
+				document.getElementById("result").innerHTML = `<div id="result" class="poligon__res">Резултат: ${result}</div>`;
+			}
+		</script>
+		<footer class="footer">
+			<div class="footer__container">
+			</div>
+		</footer>
+	</div>
+	<!-- <div id="popup" aria-hidden="true" class="popup">
+	<div class="popup__wrapper">
+		<div class="popup__content">
+			<button data-close type="button" class="popup__close">Закрыть</button>
+			<div class="popup__text">
+				Text
+			</div>
+		</div>
+	</div>
+</div> -->
+	<script src="js/app.min.js?_v=20220522201812"></script>
+</body>
+
+</html>
